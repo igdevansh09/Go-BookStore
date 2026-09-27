@@ -15,7 +15,7 @@ var NewBook models.Book
 func GetBook(w http.ResponseWriter, r *http.Request) {
 	newbooks := models.GetAllBooks()
 	res, _ := json.Marshal(newbooks)
-	w.Header().Set("Content-type", "pkglications/json")
+	w.Header().Set("Content-type", "appllications/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
@@ -29,7 +29,7 @@ func GetBookById(w http.ResponseWriter, r *http.Request) {
 	}
 	bookdetails, _ := models.GetBookById(id)
 	res, _ := json.Marshal(bookdetails)
-	w.Header().Set("Content-type", "pkglications/json")
+	w.Header().Set("Content-type", "appllications/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
@@ -52,7 +52,7 @@ func DeleteBook(w http.ResponseWriter, r *http.Request) {
 	}
 	book := models.DeleteBook(id)
 	res, _ := json.Marshal(book)
-	w.Header().Set("Content-type", "pkglications/json")
+	w.Header().Set("Content-type", "appllications/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
@@ -78,7 +78,7 @@ func UpdateBook(w http.ResponseWriter, r *http.Request) {
 	}
 	db.Save(&bookdetails)
 	res, _:= json.Marshal(bookdetails)
-	w.Header().Set("Content-type", "pkglications/json")
+	w.Header().Set("Content-type", "appllications/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
